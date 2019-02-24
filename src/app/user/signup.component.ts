@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit {
           error => this.handleError(error)
         );
     } else {
+      $(".progress").hide();
       this.error = "Your passwords do not match";
     }
   }

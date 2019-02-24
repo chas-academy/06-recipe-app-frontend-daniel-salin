@@ -33,8 +33,9 @@ export class LoginComponent implements OnInit {
     
     this.userService
       .login(this.login)
-      .subscribe(
-        data => this.handleResponse(data)
+      .subscribe( 
+        data => this.handleResponse(data),
+        error => this.handleError(error),
       );
   }
 

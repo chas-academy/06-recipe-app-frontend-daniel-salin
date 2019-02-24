@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { TokenService } from '../user/token.service';
+declare var $: any;
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,19 @@ public loggedIn: boolean;
   ) { }
 
   ngOnInit() {
+      $('.sidenav').sidenav(
+        {
+          edge: 'right',
+          draggable: true,
+          inDuration: 250,
+          outDuration: 200,
+          onOpenStart: null,
+          onOpenEnd: null,
+          onCloseStart: null,
+          onCloseEnd: null,
+          preventScrolling: true
+      }
+      );
     this.authService.authStatus.subscribe(value => this.loggedIn = value);
   }
 
@@ -25,3 +39,4 @@ public loggedIn: boolean;
   }
 
 }
+

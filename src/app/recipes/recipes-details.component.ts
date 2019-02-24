@@ -69,9 +69,6 @@ export class RecipesDetailsComponent implements OnInit {
   }
 
   saveRecipe(list) {
-    this.listService.addRecipe(this.recipe, list).subscribe(data =>
-      {
-        console.log(data);
-      });
+    this.listService.addRecipe(this.recipe, list).subscribe();
   }
 }

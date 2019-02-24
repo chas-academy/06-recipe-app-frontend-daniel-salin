@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { ListsComponent } from './lists.component';
 import { AfterLoginService } from '../user/after-login.service';
 
