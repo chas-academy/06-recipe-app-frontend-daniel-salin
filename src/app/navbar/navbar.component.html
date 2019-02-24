@@ -10,7 +10,6 @@
         <li *ngIf="!loggedIn"><a routerLink="/login">Login</a></li>
         <li *ngIf="!loggedIn"><a routerLink="/register">Register</a></li>
         <li *ngIf="loggedIn"><a routerLink="/lists">Lists</a></li>
-        <li *ngIf="loggedIn"><a routerLink="/user">User</a></li>
         <li *ngIf="loggedIn"><a routerLink="" (click)="logout()">Logout</a></li>
       </ul>
     </div>
@@ -18,9 +17,9 @@
 </nav>
 
 <ul class="sidenav right" id="mobile-demo">
-  <li *ngIf="!loggedIn"><a routerLink="/login">Login</a></li>
-  <li *ngIf="!loggedIn"><a routerLink="/register">Register</a></li>
-  <li *ngIf="loggedIn"><a routerLink="/lists">Lists</a></li>
-  <li *ngIf="loggedIn"><a routerLink="/user">User</a></li>
-  <li *ngIf="loggedIn"><a routerLink="" (click)="logout()">Logout</a></li>
+  <li><a class="sidenav-close" routerLink="/recipe">Search</a></li>
+  <li *ngIf="!loggedIn"><a class="sidenav-close" routerLink="/login">Login</a></li>
+  <li *ngIf="!loggedIn"><a class="sidenav-close" routerLink="/register">Register</a></li>
+  <li *ngIf="loggedIn"><a class="sidenav-close" routerLink="/lists">Lists</a></li>
+  <li *ngIf="loggedIn"><a class="sidenav-close" routerLink="" (click)="logout()">Logout</a></li>
 </ul>
