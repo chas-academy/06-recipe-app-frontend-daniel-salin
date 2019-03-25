@@ -15,10 +15,16 @@
     <div *ngIf="loggedIn" class="section">
       <h5>Add To Your Recipe List</h5>
       <div *ngFor="let list of lists" class="row">
-       <div class="col l4 offset-l4  m4 s6">{{ list.title }} </div> 
-       <div class="col l1 m1 s2"><a (click)="saveRecipe(list)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></div> 
+       <div class="col l4 offset-l4  m4 s6"><a [routerLink]="['/lists']">{{ list.title }}</a> </div> 
+        <div class="col l1 m1 s2">
+         <a *ngIf="!renderListIcon(list)" (click)="saveRecipe(list)" class="btn-floating btn-small waves-effect waves-light green">
+          <i class="material-icons">add</i>
+          </a>
+         <a *ngIf="renderListIcon(list)" (click)="removeRecipe(list)" class="btn-floating btn-small waves-effect waves-light red">
+          <i class="material-icons">bookmark</i>
+          </a>
+        </div> 
       </div>
-
       <div class="input-field section">
         </div>
       </div> 
